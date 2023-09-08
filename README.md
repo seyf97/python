@@ -1,2 +1,2 @@
 # python
-Some small projects i did on python
+Some small projects I did while learning python :]
