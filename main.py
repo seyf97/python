@@ -1,28 +1,54 @@
-from turtle import Screen
-from snake import Snake
-import time
+morse_code_dict = {
+    " ": ".......",
+    "0": "-----",
+    "1": ".----",
+    "2": "..---",
+    "3": "...--",
+    "4": "....-",
+    "5": ".....",
+    "6": "-....",
+    "7": "--...",
+    "8": "---..",
+    "9": "----.",
+    "a": ".-",
+    "b": "-...",
+    "c": "-.-.",
+    "d": "-..",
+    "e": ".",
+    "f": "..-.",
+    "g": "--.",
+    "h": "....",
+    "i": "..",
+    "j": ".---",
+    "k": "-.-",
+    "l": ".-..",
+    "m": "--",
+    "n": "-.",
+    "o": "---",
+    "p": ".--.",
+    "q": "--.-",
+    "r": ".-.",
+    "s": "...",
+    "t": "-",
+    "u": "..-",
+    "v": "...-",
+    "w": ".--",
+    "x": "-..-",
+    "y": "-.--",
+    "z": "--..",
+    ".": ".-.-.-",
+    ",": "--..--",
+    "?": "..--..",
+    "!": "-.-.--",
+    "-": "-....-",
+    "/": "-..-.",
+    "@": ".--.-.",
+    "(": "-.--.",
+    ")": "-.--.-"
+}
+result = ""
+text = input("Please enter a text: ").lower()
 
-screen = Screen()
-screen.setup(width=600, height=600)
-screen.bgcolor("black")
-screen.title("My Snake Game")
-screen.tracer(0)
-
-snake = Snake()
-food = Food()
-
-screen.listen()
-screen.onkey(snake.up, "Up")
-screen.onkey(snake.down, "Down")
-screen.onkey(snake.left, "Left")
-screen.onkey(snake.right, "Right")
-
-game_is_on = True
-while game_is_on:
-    screen.update()
-    time.sleep(0.1)
-
-    snake.move()
-
-
-screen.exitonclick()
+for letter in text:
+    result += morse_code_dict[letter] + " "
+print(result)
